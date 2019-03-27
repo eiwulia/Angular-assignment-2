@@ -1,0 +1,36 @@
+<h2>Destination travels</h2>
+
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <app-travel-destination 
+        *ngFor="let city of cities" 
+        [name]="city.name" 
+        [monument]="city.monument"
+        [food]="city.food" 
+        [image]="city.image" 
+        (onSelected)="selectedDestination($event)"
+        [class.color]="city === selectedCityColor" 
+        (click)="selectedDestination(city)">
+      </app-travel-destination>
+      <li class="nav-item">
+        <a class="nav-link" [class.color]="isClicked" (click)="deselect()"> Refresh button </a>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="!selectedCity">
+    No City Destination Selected
+  </div>
+  <div *ngIf="selectedCity">
+    <div class="card bg-dark text-white">
+      <img src="{{ selectedCity.image }}" class="card-img" alt="picture">
+      <div class="card-img-overlay">
+        <h5 class="card-title">{{ selectedCity.name }}</h5>
+        <p class="card-text">When you are there you can visit {{  selectedCity.monument }}
+          and eat popular local foods, like {{  selectedCity.food }}.</p>
+      </div>
+    </div>
+  </div>
+</div>

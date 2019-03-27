@@ -1,0 +1,9 @@
+.color {
+    background-color: pink;
+}
+.nav-link:hover {
+    background-color: rgb(255, 218, 224);
+}
+a {
+    color: black;
+}

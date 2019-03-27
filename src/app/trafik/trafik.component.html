@@ -1,0 +1,9 @@
+<h2>Traffic lights</h2>
+<h3>Red => Red & Yellow => Green => Yellow => Red.. </h3>
+<div class="container">
+  <div  [className]="divId == 0 || divId == 1 ? 'first' : ''"></div>
+  <div  [className]="divId == 1 || divId == 3 ? 'second' : ''"></div>
+  <div  [className]="divId == 2 ? 'third' : ''"></div>
+  <button (click)="trafficLights()" class="btn btn-secondary">Next</button>
+</div>
+

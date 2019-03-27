@@ -1,0 +1,23 @@
+<h2> The list of cities I want to visit: </h2>
+
+<p *ngIf="!places"> No places to show :( </p>
+
+  <ul  class="list-group " *ngIf="places">
+    <li class="list-group-item list-group-item-secondary" 
+      *ngFor="let place of places" 
+      (click)="onSelect(place)"
+      [class.selected]="isInList(place)"
+      > 
+      {{place.city}} 
+      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="deleteCity(place)" >Delete</button>
+    </li> 
+  </ul>
+
+<p> Add another city!</p> 
+
+<div class="input-group mb-3">
+  <input [(ngModel)]="newCity" class="form-control" placeholder="new city">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" *ngIf="newCity" (click)="addCity(newCity)">Add</button>
+  </div>
+</div>

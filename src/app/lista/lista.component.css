@@ -1,0 +1,21 @@
+span {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: pink;
+  color: white;
+}
+
+li:hover {
+  background-color: #c8cbcf;
+  color: white;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+.btn-outline-secondary {
+  float: right;
+}
